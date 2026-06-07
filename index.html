@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة الساريسي للإلكترونيات | الكتالوج الرقمي 2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Cairo', 'Inter', sans-serif;
+            background-color: #f1f5f9; 
+            color: #1e293b;
+            scroll-behavior: smooth;
+        }
+        .page {
+            display: none;
+            min-height: 100vh;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+        .page.active {
+            display: flex;
+            opacity: 1;
+        }
+        .gradient-bg {
+            background: radial-gradient(circle at top right, #f8fafc 0%, #e2e8f0 70%, #cbd5e1 100%);
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75); 
+            backdrop-filter: blur-16px;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+        }
+        .tab-btn.active {
+            background-color: #2563eb;
+            border-color: #2563eb;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="gradient-bg antialiased overflow-x-hidden">
+
+    <nav class="fixed top-0 left-0 w-full z-50 glass-card border-t-0 border-x-0 py-5 px-8 flex justify-between items-center" dir="rtl">
+        <div class="flex items-center space-x-3 space-x-reverse cursor-pointer" onclick="navigateTo('cover')">
+            <div class="w-8 h-8 rounded-full accent-gradient flex items-center justify-center font-bold text-white text-sm shadow-md shadow-blue-500/20">AS</div>
+            <span class="text-sm font-bold tracking-wide text-slate-800">شركة مكتبة الساريسي</span>
+        </div>
+        
+        <div class="hidden lg:flex items-center space-x-6 space-x-reverse text-xs font-bold text-slate-600">
+            <button onclick="navigateTo('toc')" class="hover:text-blue-600 transition-colors cursor-pointer pr-6">الرئيسية</button>
+            <button onclick="navigateTo('about')" class="hover:text-blue-600 transition-colors cursor-pointer">رؤيتنا</button>
+            <button onclick="navigateTo('categories')" class="hover:text-blue-600 transition-colors cursor-pointer">أقسام المنتجات</button>
+            <button onclick="navigateTo('prod-showcase')" class="hover:text-blue-600 transition-colors cursor-pointer">معرض الأجهزة</button>
+            <button onclick="navigateTo('contact')" class="hover:text-blue-600 transition-colors cursor-pointer mr-6 pl-2 border-r border-slate-300">اتصل بنا</button>
+        </div>
+
+        <div class="flex items-center space-x-4 space-x-reverse">
+            <span class="text-xs text-blue-600 font-bold hidden sm:inline">قسم الإلكترونيات والتكنولوجيا</span>
+            <button onclick="navigateTo('toc')" class="p-2 hover:bg-slate-200/50 rounded-full transition-colors cursor-pointer text-slate-700">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="pt-24 min-h-screen flex flex-col justify-between">
+        
+        <section id="cover" class="page active flex-col justify-center items-center px-6 relative overflow-hidden" dir="rtl">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_120%,rgba(37,99,235,0.08),transparent_50%)]"></div>
+            <div class="max-w-5xl w-full text-center space-y-8 z-10 py-12">
+                <p class="text-blue-600 text-xl sm:text-2xl font-bold animate-pulse">من القلم إلى التكنولوجيا</p>
+                <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-slate-900 leading-none">
+                    الساريسي <br><span class="font-bold bg-gradient-to-r from-blue-700 via-indigo-600 to-slate-900 bg-clip-text text-transparent">للإلكترونيات</span>
+                </h1>
+                <p class="text-gray-700 text-base md:text-lg leading-relaxed max-w-3xl mx-auto font-medium">
+                    أكثر من 30 عاماً من التميز والريادة في عالم التكنولوجيا. نضع بين أيديكم أحدث التقنيات وأجهزة الحاسوب ومستلزماتها، كوكيل وموزع معتمد لأبرز وأقوى الماركات العالمية في رام الله.
+                </p>
+                <div class="pt-6">
+                    <button onclick="navigateTo('toc')" class="accent-gradient text-white px-8 py-4 rounded-lg text-base font-bold hover:shadow-lg hover:shadow-blue-500/20 transition-all flex items-center justify-center gap-3 mx-auto group cursor-pointer">
+                        <span>اكتشف المزيد</span>
+                        <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-xs font-bold tracking-wider text-slate-400">
+                كتالوج الأجهزة والحلول الإلكترونية — 2026
+            </div>
+        </section>
+
+        <section id="toc" class="page flex-col justify-center px-6 md:px-12 lg:px-24 py-16" dir="rtl">
+            <div class="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6 lg:border-r lg:border-slate-300/60 lg:pr-8 text-right block">
+                    <div>
+                        <span class="block text-sm font-bold text-blue-600 mb-1">01 / القائمة الرئيسية</span>
+                        <h2 class="text-4xl md:text-5xl font-black leading-tight">
+                            <span class="bg-gradient-to-r from-blue-700 via-indigo-600 to-slate-900 bg-clip-text text-transparent">الساريسي للإلكترونيات</span>
+                        </h2>
+                    </div>
+                    <p class="text-slate-600 text-sm md:text-base font-medium leading-relaxed">
+                        مرحباً بكم في بوابة الساريسي الذكية، وجهتكم الموثوقة لاستكشاف أحدث الحلول التقنية والبنى التحتية المتطورة. نوفر لكم دليلاً متكاملاً للمواصفات المعتمدة والأجهزة الإلكترونية من كبرى العلامات التجارية العالمية.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 bg-white/70 border border-slate-200/80 shadow-sm rounded-lg text-right">
+                            <span class="block text-2xl font-bold text-blue-600">2026</span>
+                            <p class="text-xs text-slate-500 font-bold mt-1">أحدث إصدارات التكنولوجيا لعام 2026</p>
+                        </div>
+                        <div class="p-4 bg-white/70 border border-slate-200/80 shadow-sm rounded-lg text-right">
+                            <span class="block text-2xl font-bold text-emerald-600">100%</span>
+                            <p class="text-xs text-slate-500 font-bold mt-1">مواصفات أصلية ومعتمدة</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-4 w-full">
+                    <div onclick="navigateTo('about')" class="group flex justify-between items-center p-5 glass-card bg-white/60 hover:bg-white border-r-4 border-r-transparent hover:border-r-blue-600 transform hover:-translate-y-1.5 transition-all duration-300 cursor-pointer rounded-lg">
+                        <div class="flex items-center space-x-5 space-x-reverse">
+                            <div class="p-3 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                                <i data-lucide="info" class="w-5 h-5"></i>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-base font-bold tracking-wide text-slate-800 block">رؤيتنا وخدماتنا</span>
+                                <span class="text-xs text-slate-400 font-medium">تعرّف على التزاماتنا ومعايير الجودة التي نقدمها لكم</span>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-left" class="w-5 h-5 text-slate-400 group-hover:text-blue-600 group-hover:-translate-x-1 transition-all"></i>
+                    </div>
+
+                    <div onclick="navigateTo('categories')" class="group flex justify-between items-center p-5 glass-card bg-white/60 hover:bg-white border-r-4 border-r-transparent hover:border-r-indigo-600 transform hover:-translate-y-1.5 transition-all duration-300 cursor-pointer rounded-lg">
+                        <div class="flex items-center space-x-5 space-x-reverse">
+                            <div class="p-3 bg-indigo-50 text-indigo-600 rounded-lg group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
+                                <i data-lucide="layout-grid" class="w-5 h-5"></i>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-base font-bold tracking-wide text-slate-800 block">تصنيفات الأجهزة والحلول</span>
+                                <span class="text-xs text-slate-400 font-medium">استكشف مجموعتنا الواسعة من الحواسيب، الطابعات ومستلزماتها</span>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-left" class="w-5 h-5 text-slate-400 group-hover:text-indigo-600 group-hover:-translate-x-1 transition-all"></i>
+                    </div>
+
+                    <div onclick="navigateTo('prod-showcase')" class="group flex justify-between items-center p-5 glass-card bg-white/60 hover:bg-white border-r-4 border-r-transparent hover:border-r-emerald-600 transform hover:-translate-y-1.5 transition-all duration-300 cursor-pointer rounded-lg">
+                        <div class="flex items-center space-x-5 space-x-reverse">
+                            <div class="p-3 bg-emerald-50 text-emerald-600 rounded-lg group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
+                                <i data-lucide="layers" class="w-5 h-5"></i>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-base font-bold tracking-wide text-slate-800 block">معرض المنتجات والأسعار</span>
+                                <span class="text-xs text-slate-400 font-medium">تصفح المواصفات الفنية الكاملة وقوائم الأسعار المحدثة أولاً بأول</span>
+                            </div>
+                        </div>
+                        <div class="text-xs font-mono text-emerald-600 font-bold flex items-center gap-1">
+                            <span>تصفح المعرض</span>
+                            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+
+                    <div onclick="navigateTo('contact')" class="group flex justify-between items-center p-5 glass-card bg-white/60 hover:bg-white border-r-4 border-r-transparent hover:border-r-amber-600 transform hover:-translate-y-1.5 transition-all duration-300 cursor-pointer rounded-lg">
+                        <div class="flex items-center space-x-5 space-x-reverse">
+                            <div class="p-3 bg-amber-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300">
+                                <i data-lucide="phone-call" class="w-5 h-5"></i>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-base font-bold tracking-wide text-slate-800 block">مبيعات واستشارات المشتريات</span>
+                                <span class="text-xs text-slate-400 font-medium">تواصل مباشرة مع فريقنا التقني في فرع رام الله لطلب الأجهزة</span>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-left" class="w-5 h-5 text-slate-400 group-hover:text-amber-600 group-hover:-translate-x-1 transition-all"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="page flex-col justify-center px-6 md:px-12 lg:px-24 py-16" dir="rtl">
+            <div class="max-w-6xl w-full mx-auto space-y-16 relative">
+                <div class="flex justify-between items-center border-b border-slate-200 pb-8">
+                    <div class="space-y-2 text-right">
+                        <span class="text-xs font-bold text-blue-600">02 / رؤيتنا وقيمنا</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">التميز والموثوقية التقنية</h2>
+                    </div>
+                    <button onclick="navigateTo('toc')" class="p-2 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-600 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 text-xs px-4 py-2 font-bold shadow-sm">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>  العودة للرئيسية
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-right">
+                    <div class="glass-card p-8 space-y-4 bg-white/80 rounded-lg">
+                        <div class="w-12 h-12 rounded-lg accent-gradient flex items-center justify-center shadow-md shadow-blue-500/20">
+                            <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">أجهزة أصلية بالكامل</h3>
+                        <p class="text-slate-600 text-sm font-medium leading-relaxed">
+                            نوفر المنتجات الأصلية والموثوقة من الشركات العالمية الكبرى لضمان أطول فترة تشغيل وأعلى كفاءة ممكنة لبنيتكم الرقمية.
+                        </p>
+                    </div>
+                    <div class="glass-card p-8 space-y-4 bg-white/80 rounded-lg">
+                        <div class="w-12 h-12 rounded-lg bg-slate-200 border border-slate-300/60 flex items-center justify-center text-blue-600">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">ضمان ودعم معتمد</h3>
+                        <p class="text-slate-600 text-sm font-medium leading-relaxed">
+                            نقدم خدمات كفالة حقيقية ودعماً فنياً مباشراً من خلال فريقنا المتخصص لضمان تلبية طلباتكم وحل المشكلات الفنية بسرعة فائقة.
+                        </p>
+                    </div>
+                    <div class="glass-card p-8 space-y-4 bg-white/80 rounded-lg">
+                        <div class="w-12 h-12 rounded-lg bg-slate-200 border border-slate-300/60 flex items-center justify-center text-blue-600">
+                            <i data-lucide="globe" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">حلول تكنولوجية متكاملة</h3>
+                        <p class="text-slate-600 text-sm font-medium leading-relaxed">
+                            تلبية احتياج المؤسسات والشركات من الخدمات التكنولوجية (أجهزة مكتبية ومحمولة ، طابعات ومستلزمات التصوير ،الاحبار ، واكسسوارات الاجهزة )
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="categories" class="page flex-col justify-center px-6 md:px-12 lg:px-24 py-16" dir="rtl">
+            <div class="max-w-6xl w-full mx-auto space-y-12 relative">
+                <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+                    <div class="space-y-2 text-right">
+                        <span class="text-xs font-bold text-blue-600">03 / تصنيفات المنتجات</span>
+                        <h2 class="text-4xl font-bold tracking-tight text-slate-900">مجموعتنا التجارية</h2>
+                    </div>
+                    <button onclick="navigateTo('toc')" class="p-2 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-600 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 text-xs px-4 py-2 font-bold shadow-sm">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i> العودة للرئيسية
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-right">
+                    <div onclick="switchCategoryTab('laptops')" class="group p-6 glass-card border hover:border-blue-500/50 hover:bg-white transition-all cursor-pointer space-y-4 rounded-lg">
+                        <div class="flex justify-between items-center">
+                            <i data-lucide="laptop" class="w-8 h-8 text-blue-600"></i>
+                            <span class="text-xs font-bold text-slate-400">HP Elite</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">أجهزة الكمبيوتر واللابتوب</h3>
+                        <p class="text-xs text-slate-500 font-medium">أحدث أجهزة الـ Notebooks المدعومة بالذكاء الاصطناعي، ProBooks، ومحطات العمل فائقة الأداء ZBook للمهندسين.</p>
+                    </div>
+
+                    <div onclick="switchCategoryTab('printers')" class="group p-6 glass-card border hover:border-blue-500/50 hover:bg-white transition-all cursor-pointer space-y-4 rounded-lg">
+                        <div class="flex justify-between items-center">
+                            <i data-lucide="printer" class="w-8 h-8 text-blue-600"></i>
+                            <span class="text-xs font-bold text-slate-400"> officeJet \ LaserJet</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">الطابعات ومستلزماتها</h3>
+                        <p class="text-xs text-slate-500 font-medium">طابعات ليزر وطابعات ملونة مخصصة للشركات والمكاتب، مع أنظمة الأحبار المستمرة ذات الإنتاجية العالية.</p>
+                    </div>
+
+                    <div onclick="switchCategoryTab('desktops')" class="group p-6 glass-card border hover:border-blue-500/50 hover:bg-white transition-all cursor-pointer space-y-4 rounded-lg">
+                        <div class="flex justify-between items-center">
+                            <i data-lucide="server" class="w-8 h-8 text-blue-600"></i>
+                            <span class="text-xs font-bold text-slate-400">Tower Pro  أجهزة Z1 الاحترافية</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">الحواسيب المكتبية (Desktops)</h3>
+                        <p class="text-xs text-slate-500 font-medium">أجهزة كمبيوتر مكتبية قوية وآمنة مصممة للأعمال الشاقة والشركات والمؤسسات التعليمية.</p>
+                    </div>
+
+                    <div onclick="switchCategoryTab('monitors')" class="group p-6 glass-card border hover:border-blue-500/50 hover:bg-white transition-all cursor-pointer space-y-4 rounded-lg">
+                        <div class="flex justify-between items-center">
+                            <i data-lucide="monitor" class="w-8 h-8 text-blue-600"></i>
+                            <span class="text-xs font-bold text-slate-400">IPS 4K / شاشات الاجتماعات</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">الشاشات الاحترافية</h3>
+                        <p class="text-xs text-slate-500 font-medium">شاشات ذات ألوان دقيقة وجودة عالية، متوفرة بميزات متقدمة وكاميرات مدمجة للمؤتمرات.</p>
+                    </div>
+
+                    <div onclick="switchCategoryTab('mobile')" class="group p-6 glass-card border hover:border-blue-500/50 hover:bg-white transition-all cursor-pointer space-y-4 rounded-lg">
+                        <div class="flex justify-between items-center">
+                            <i data-lucide="tablet" class="w-8 h-8 text-blue-600"></i>
+                            <span class="text-xs font-bold text-slate-400">Mobile / tablet </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">الأجهزة اللوحية والهواتف</h3>
+                        <p class="text-xs text-slate-500 font-medium">تابلت وأجهزة ذكية مخصصة للعمل الميداني والخدمات اللوجستية</p>
+                    </div>
+
+                    <div onclick="switchCategoryTab('accessories')" class="group p-6 glass-card border hover:border-blue-500/50 hover:bg-white transition-all cursor-pointer space-y-4 rounded-lg">
+                        <div class="flex justify-between items-center">
+                            <i data-lucide="mouse" class="w-8 h-8 text-blue-600"></i>
+                            <span class="text-xs font-bold text-slate-400">إكسسوارات سلكية ولاسلكية</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">الملحقات والإكسسوارات</h3>
+                        <p class="text-xs text-slate-500 font-medium">لوحات مفاتيح، ماوسات مريحة، وحلول التوصيل اللاسلكية لتهيئة بيئة عمل مكتبية متكاملة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prod-showcase" class="page flex-col justify-center px-6 md:px-12 lg:px-24 py-12" dir="rtl">
+            <div class="max-w-7xl w-full mx-auto space-y-6">
+                
+                <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+                    <h2 class="text-2xl font-bold text-slate-900">معرض الأجهزة المعتمدة</h2>
+                    <button onclick="navigateTo('toc')" class="p-2 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-600 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 text-xs px-4 py-2 font-bold shadow-sm">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i> العودة للرئيسية
+                    </button>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3 pb-2">
+                    <button onclick="activateSubCategory('laptops')" id="btn-tab-laptops" class="tab-btn px-6 py-3 border border-slate-300 rounded-lg text-sm font-bold text-slate-600 hover:bg-white transition-all cursor-pointer active">الأجهزة واللابتوب</button>
+                    <button onclick="activateSubCategory('printers')" id="btn-tab-printers" class="tab-btn px-6 py-3 border border-slate-300 rounded-lg text-sm font-bold text-slate-600 hover:bg-white transition-all cursor-pointer">طابعات وأحبار</button>
+                    <button onclick="activateSubCategory('desktops')" id="btn-tab-desktops" class="tab-btn px-6 py-3 border border-slate-300 rounded-lg text-sm font-bold text-slate-600 hover:bg-white transition-all cursor-pointer">الحواسيب المكتبية</button>
+                    <button onclick="activateSubCategory('monitors')" id="btn-tab-monitors" class="tab-btn px-6 py-3 border border-slate-300 rounded-lg text-sm font-bold text-slate-600 hover:bg-white transition-all cursor-pointer">الشاشات</button>
+                    <button onclick="activateSubCategory('mobile')" id="btn-tab-mobile" class="tab-btn px-6 py-3 border border-slate-300 rounded-lg text-sm font-bold text-slate-600 hover:bg-white transition-all cursor-pointer">الموبايل والتابلت</button>
+                    <button onclick="activateSubCategory('accessories')" id="btn-tab-accessories" class="tab-btn px-6 py-3 border border-slate-300 rounded-lg text-sm font-bold text-slate-600 hover:bg-white transition-all cursor-pointer">الملحقات والإكسسوارات</button>
+                </div>
+
+                <p class="text-xs text-blue-600 font-bold flex items-center gap-1.5"><i data-lucide="info" class="w-4 h-4"></i>💡 انقر على إطار صورة أو عنوان أي منتج للانتقال فوراً لمشاهدة مواصفاته الفنية الكاملة والضمان والأسعار.</p>
+
+                <div id="grid-laptops" class="sub-category-grid grid grid-cols-1 xl:grid-cols-2 gap-6 text-right"></div>
+                <div id="grid-printers" class="sub-category-grid hidden grid grid-cols-1 xl:grid-cols-2 gap-6 text-right"></div>
+                <div id="grid-desktops" class="sub-category-grid hidden grid grid-cols-1 xl:grid-cols-2 gap-6 text-right"></div>
+                <div id="grid-monitors" class="sub-category-grid hidden grid grid-cols-1 xl:grid-cols-2 gap-6 text-right"></div>
+                <div id="grid-mobile" class="sub-category-grid hidden grid grid-cols-1 xl:grid-cols-2 gap-6 text-right"></div>
+                <div id="grid-accessories" class="sub-category-grid hidden grid grid-cols-1 xl:grid-cols-3 gap-6 text-right"></div>
+
+                <script>
+                    // Complete Mapped Arrays (3 Specified Notebooks safely deleted)
+                    const laptopsData = [
+                        ["D0PM6ET", "HP 250R 15.6 inch G10 Notebook PC", "HP 250RG10 Intel Core 3-100U 15.6 nch 8GB DDR5-5200, 512GB SSD, 1 year warranty", "1,500", "معالج Intel® Core™ i3-100U", "ذاكرة 8GB DDR5-5200 RAM", "قرص تخزين 512GB SSD Array", "كفالة محلية معتمدة لمدة عام", "laptop", "D0PM6ET"],
+                        ["D0PN6ET", "HP 250R 15.6 inch G9 Notebook PC ", "HP 250RG10 Intel Core 5-120U,15.6 inch/8GB DDR5, 512GB SSD,3 year warranty", "1,900", "معالج Intel® Core™ i5-120U", "ذاكرة 8GB DDR5 عالية السرعة", "قرص تخزين 512GB NVMe M.2 SSD", "كفالة محلية معتمدة لمدة عام", "laptop", "D0PN6ET"],
+                        ["D0PP1ET", "HP 250R 15.6 inch G10 Notebook PC (i7)", "HP 250RG10 Intel Core 7-150U ,16GB DDR5, 512GB SSD, Realtek Wi-Fi 6, 1 year warranty", "2,600", "معالج Intel® Core™7-150U القوي", "ذاكرة 16GB DDR5 ثنائية القناة", "قرص تخزين 512GB Performance NVMe", "كفالة محلية معتمدة لمدة عام", "laptop", "D0PP1ET"],
+                        ["D13GTEA", "15-fd1044ne (AI Slate)", "HP Laptop Clamshell | Sebastian 24C1 | Ultra 7-155H (Copilot) | 24GB DDR5 | 512GB PCIe | Intel Arc", "2,850", "معالج للذكاء الاصطناعي Ultra 7-155H", "ذاكرة 24GB DDR5 5600 Module", "قرص تخزين 512GB PCIe Value SSD", "باقة الدعم القياسي بالموقع", "laptop", "D13GTEA"],
+                        ["AD2L2ET", "HP ProBook 4 G1i 16 inch AI Laptop", "IDS UMA Ultra 5 225U| 16GB DDR5 5600 | 16.0\" AG WUXGA (1920x1200) UWVA | 512GB PCIe NVMe SSD", "2,900", "معالج ذكي Intel® Core™ Ultra 5 225U", "ذاكرة 16GB DDR5 5600 SODIMM", "قرص تخزين 512GB PCIe NVMe", "كفالة HP المميزة لمدة 4 سنوات بموقعك", "laptop", "AD2L2ET"],
+                        ["AD2L5ET", "HP ProBook 4 G1i 16 inch AI Laptop (Ultra 7)", "IDS UMA Ultra 7 255U| 16GB DDR5 5600 | 16.0\" AG WUXGA Panel | 512GB PCIe NVMe Solid Drive", "3,600", "معالج ذكي Intel® Core™ Ultra 7 255U", "ذاكرة 16GB DDR5 5600 SODIMM", "قرص تخزين 512GB PCIe NVMe High Perf", "كفالة HP المميزة لمدة 4 سنوات بموقعك", "laptop", "AD2L5ET"],
+                        ["9G0C0ET", "HP ELITEBOOK 840 G11 U7/16/1T/5Y/WIN", "Intel® Core™ Ultra 7 /16 GB DDR5-5600 MT/1 TB PCIe® NVMe™ SSD/ Win 11 pro 64 bit", "4,600", "مصفوفة معالجة Ultra 7 الذكية", "ذاكرة 16 GB DDR5-5600 MT/s Core", "قرص تخزين ضخم 1 TB PCIe® NVMe™", "حماية ممتدة مخصصة للأعمال لـ 5 سنوات", "laptop", "9G0C0ET"],
+                        ["B86Q7YA", "HP OMNI BOOK U7/16/512/WIN/360xT", "Intel Core 7 150U/16 GB LPDDR5 RAM/512 GB SSD/ Display 14 inches/ Touch Screen", "3,800", "معالج فئة أولى Intel Core 7 150U", "ذاكرة عالية الكثافة 16 GB LPDDR5", "وحدة تخزين فلاشية مدمجة 512 GB", "دعم فني وضمان هيكلي لـ 3 سنوات", "laptop", "B86Q7YA"],
+                        ["21SR006PIV", "Lenovo ThinkPad E16 Gen 3 Ultra 7", "Lenovo ThinkPad E16 Gen 3 AI PC 16\" FHD+ Intel® Core™ Ultra 7 255H/16GB/512GB NVME/WIN 11 PRO", "4,500", "معالج ذكي Intel® Core™ Ultra 7 255H", "ذاكرة مخصصة للشركات 16GB RAM", "وحدة تخزين بيانات سريعة 512GB NVME", "ضمان لينوفو الهيكلي لمدة 3 سنوات", "laptop", "21SR006PIV"],
+                        ["CB8K3EA", "HP VICTUS Gameing laptop Ultra 7", "Ultra 7 - 240H (10C) | 16GB DDR5 | 1TB PCIe Gen4 | NVIDIA GeForce RTX 5060 8GB VRAM | 15.6 FHD 144Hz", "4,800", "معالج Core 7 - 240H (مصفوفة 10 أنوية)", "ناقل أداء سريع 16GB DDR5 5600", "قرص تخزين فائق السرعة 1TB PCIe Gen4", "دعم فني وضمان هيكلي لـ 3 سنوات", "laptop", "CB8K3EA"],
+                        
+                        // 🌟 Injected Verified Core Ultra 5 125H Dynamic Laptop Node Array
+                        ["15-FD1043NE", "HP Laptop 15-fd1043nj Core Ultra 5", "Intel Core Ultra 5 125H | 16GB DDR5 | 512GB NVMe SSD | Intel® Arc™ Graphics | 15.6 FHD Display", "3,450", "معالج الذكاء الاصطناعي Intel® Core™ Ultra 5 125H (14 أنوية)", "ذاكرة 16GB DDR5 (2x8 GB) بسرعة 5600MHz", "قرص تخزين فائق السرعة 512GB PCIe® NVMe™ M.2 SSD", "كفالة ممتدة للشركات لمدة 3 سنوات كاملة (3YR Onsite SLA)", "laptop", "15-FD1043NE"]
+                    ];
+
+                    const printersData = [
+                        ["51P96B", "HP DeskJet 2910 All-in-One", "Print, copy, scan, wireless Up to 7 ppm (black), up to 4 ppm (color). Home Use.", "260", "طباعة، تصوير، مسح ضوئي، واي فاي", "مخصصة للاستخدام المنزلي الخفيف", "حبارة مدمجة فئة HP 305", "أسود لـ 120 صفحة، ملون لـ 100 صفحة", "printer", "A24J4B"],
+                        ["714D5C", "HP DeskJet Plus Ink Adv 6575 AIO", "Print, Copy, Scan, Fax mobile. Up to 10 ppm black / 7 ppm color. Duplex, Wi-Fi.", "399", "طباعة، تصوير، مسح، فاكس عبر الموبايل", "طابعة منزلية متطورة وفائقة الجودة", "نظام حبر مزدوج مصفوفة HP 654", "أسود لـ 400 صفحة، ملون لـ 200 صفحة", "printer", "714D5C"],
+                        ["68K75B", "HP OfficeJet Pro 8133 All-in-One", "Print, Copy, Scan, Fax. Up to 20 ppm black / 10 ppm color. Duplex, Wi-Fi. Home/Business.", "450", "نظام متكامل للطباعة والنسخ والفاكس", "مثالية للمنازل والمكاتب الصغيرة", "خراطيش حبر نفاثة فئة HP 924", "أسود لـ 500 صفحة، ملون لـ 400 صفحة", "printer", "68K75B"],
+                        ["537P5B", "HP OfficePro 9730 AIO A3 Wide Format", "Print, Copy, Scan, Wi-Fi, speeds up to 22 ppm black / 18 ppm color. Duplex, A3 wide format size.", "1,199", "طباعة، تصوير، مسح، واي فاي قياس A3 الكبير", "فئة الأعمال والشركات للمستندات الكبيرة", "مصفوفة أحبار سائلة متطورة HP 973", "أسود لـ 2000 صفحة، ملون لـ 1600 صفحة", "printer", "537P5B"],
+                        ["1F3Y2A", "HP Smart Tank 580 All-in-One System", "Print, Copy, Scan, Up to 12 ppm (black) and 5 ppm (color) Wi-Fi. High yield structural core.", "800", "طباعة وتصوير ومسح مع مزامنة لاسلكية", "نظام خزان الحبر السائل المستمر للتوفير", "عبوات حبر سائل ذكية HP GT52/GT51", "أسود لـ 8000 صفحة، ملون لـ 6000 صفحة", "printer", "1F3Y2A"],
+                        ["7MD66F", "HP LaserJet M110W Compact Mono", "Print only / Up to 21 ppm / wireless / USB / Mono Laser.", "450", "طابعة ليزر أسود فقط فائقة السرعة", "حجم مدمج ومثالي لسطح المكتب والمكاتب", "تونر ليزر مدمج فئة HP 142A", "سعة حبر تصل إلى 1000 صفحة ورقية", "printer", "7MD66F"],
+                        ["7MD74A", "HP LaserJet MFP M141W Multipurpose", "Print, copy, scan / A4 Black & White Laser. Print speed up to 21 ppm. USB, Wi-Fi connection.", "650", "طابعة ليزر متعددة الوظائف أسود وأبيض", "للمنازل والمكاتب فئة الشبكات المصغرة", "وحدة تخزين وتونر فئة HP 150A", "سعة حبر تصل إلى 1000 صفحة ورقية", "printer", "7MD74A"],
+                        ["3G652F", "HP LaserJet Pro 3002dw Dual-Sided", "White, black / Wi-Fi, Wi-Fi Direct, Up to 33 pages per minute (ppm) (A4).", "650", "طابعة ليزر للطباعة التلقائية على الوجهين", "وحدة أحادية اللون مخصصة لبيئات العمل", "عبوة تونر عالية الكثافة HP 139A", "سعة حبر تصل إلى 1500 صفحة ورقية", "printer", "3G652F"],
+                        ["4ZB84A", "HP Laser MFP 137fnw AIO ", "Print, Scan and Copy / A4 Black and White Laser. Speed up to 21 ppm. USB, Ethernet, Wi-Fi.", "900", "طباعة، مسح، نسخ، مع فاكس شبكي مدمج", "طابعة مكتبية تجارية متكاملة للشبكات", "تونر ليزر معتمد فئة HP 106A", "سعة حبر تصل إلى 1000 صفحة ورقية", "printer", "4ZB84A"],
+                        ["2Z624F", "HP LaserJet Pro MFP 4102fdw Heavy Duty", "Print, copy, scan, fax, Wireless. Up to 40 ppm. For teams up to 10 users;", "1,500", "مصفوفة طباعة وتصوير وفاكس لاسلكي سريع", "طابعة أعمال شاقة تجارية للمجموعات الكبيرة", "تونرات عالية السعة HP 149A/149X", "تونر عادي 2900 صفحة / تونر ضخم 9500", "printer", "2Z624F"],
+                        ["499Q8F", "HP Color LaserJet Pro MFP 3302fdw", "Print, copy, scan, fax. Speed up to 25 ppm black & color. 50-sheet ADF.", "1,800", "محرك ليزر ملون متكامل للطباعة والنسخ", "قلب معالجة المهام المتعددة الملونة للمؤسسات", "مجموعة تونر ليزر ملون HP 219A", "أسود لـ 1300 صفحة، والملونات لـ 1200", "printer", "499Q8F"],
+                        ["4RA83F", "HP Color LaserJet Pro MFP 4302dw", "Print, copy, scan. Speed up to 33 ppm black & color. ADF 50 sheets capacity", "1,950", "أداء ليزر ملون عالي الكفاءة والسرعة", "مركز الطباعة الملونة فائق السرعة للشركات", "مجموعة تونر فاخرة فئة HP 220A", "أسود لـ 2000 صفحة، والملونات لـ 1800", "printer", "4RA83F"],
+                        ["443NDA", "HP LaserJet Pro 443NDA A3 Ledger Workhorse", "Print, Copy, Scan. Speed up to 25 ppm black. First page 7.7 sec. Media sizes A3; A4; A5.", "3,400", "طابعة ليزر عملاقة للمستندات والخرائط A3", "طابعة المهام الشاقة والحرجة للمؤسسات", "تونر صلح وقوي فئة HP 335A/335X", "تونر عادي 5000 صفحة / تونر ضخم 13700", "printer", "443NDA"],
+                        ["L18150", "EPSON Photo Smart Tank L18150 A3+", "Print up to 2,300 photos. A3+ borderless color photos. 6-color Claria ET Premium ink. Wi-Fi.", "2,600", "محرك طباعة صور بـ 6 ألوان قياس A3+", "مخصصة لاستوديوهات التصوير والمصممين المحترفين", "مجموعة عبوات حبر إبسون فئة 057", "أسود لـ 3600 صفحة، ملون لـ 5400 صورة", "printer", "L18150"]
+                    ];
+
+                    const desktopsData = [
+                        ["HP-290", "HP 290 G9 PC Tower (i5-14500 )", "290 G9 TWR / i5-14500 20 Cores / 8GB DDR4 / 512GB SSD / DOS / Wi-Fi 6 / Mouse & Keyboard / 3y support.", "2,100", "Intel® Core™ i5-14500 (20 Cores Node)", "8GB DDR4 3200 CR UDIMM Memory", "512GB NVMe SSD Module Space", "HP 3 Years Onsite Next Business Day SLA", "server", "HP-290"],
+                        ["HP-290-i7", "HP 290 G9 PC Tower (i7-14700 )", "290 G9 TWR / i7-14700 20 Cores / 16GB DDR4 / 512GB SSD / DOS / Wi-Fi 6 / Mouse & Keyboard.", "2,599", "Intel® Core™ i7-14700 (20 Cores Engine)", "16GB DDR4 3200 CR UDIMM Memory", "512GB NVMe SSD Module Space", "HP 3 Years Onsite Next Business Day SLA", "server", "HP-290-i7"],
+                        ["HP-PRO", "HP ProDesk 2 Tower G1i PC", "HP ProDesk 2 Tower G1 E Desktop PC Intel® Core™ i5-14500 / 8GB / 512GB NVME / FD / 3Y Support", "2,400", "Intel® Core™ i5-14500 Corporate Core", "8GB High-throughput Memory Module", "512GB NVMe Enterprise Storage Node", "3 Years Enterprise Structural Warranty", "server", "HP-PRO"],
+                        ["HP-4G1i", "HP 4G1i PC Tower Pro Base", "HP 4G1i PC Ultra 7 20 Cores / 16GB DDR5 5600 / 512GB SSD / DOS / Wi-Fi 6 / 3y support", "3,300", "Intel® Ultra 7 (20 Cores Vector)", "16GB DDR5 5600 Memory", "512GB NVMe Enterprise Storage Node", "HP 3 Years Onsite Next Business Day SLA", "server", "HP-4G1i"],
+                        ["HP-Z1", "HP Z2 G1i Professional Tower Workstation", "HP Z2 TWR Base 700W | Core Ultra7 265K vPro 5.30GHz 20 Cores | 32GB DDR5 | 1TB NVMe Solid Drive", "4,999", "Intel® Core™ Ultra 7-265k vPro (5.3GHz)", "32GB (1x32GB) DDR5 5600 UDIMM Bus", "1TB 2280 PCIe NVMe SSD", "HP 5 Years Heavy Workstation Onsite SLA", "server", "HP-Z1"]
+                    ];
+
+                    const monitorsData = [
+                        ["9U5J5AF", "HP Series 3 Pro 23.8 inch FHD Monitor", "IPS; FHD (1920 x 1080 @ 100 Hz); 1 DisplayPort; 1 HDMI 1.4; 3 years warranty protection", "550", "IPS Anti-glare Display Panel Core", "FHD (1920 x 1080 @ 100 Hz Matrix)", "1 DisplayPort, 1 HDMI 1.4 Link Terminal", "3 Years Structural Corporate Warranty", "monitor", "9U5J5AF"],
+                        ["64W41AA", "HP P27h G5 Adjustable Workspace Monitor", "IPS; 27\"; FHD (1920 x 1080); 1 DisplayPort 1.2; 1 HDMI 1.4; with Speakers; 3 years support", "750", "IPS 27-inch Height Adjustable Panel", "FHD Resolution Alignment Matrix Layout", "1 DisplayPort 1.2, 1 HDMI, 1 VGA Port", "3 Years Structural Corporate Warranty", "monitor", "64W41AA"],
+                        ["6N4C4E9", "HP E27k G5 4K USB-C Hub Display", "27\" IPS; 4K UHD (3840x2160) USB-C 5Gbps; Height Adjust/Tilt/Swivel/Pivot; Eye Ease; Light Sensor", "1,550", "Ultra-HD 4K (3840x2160) Premium IPS", "USB Type-C® 5Gbps Upstream Module Hub", "Fully Adjustable Ergonomic Stand Frame", "3 Years Structural Corporate Warranty", "monitor", "6N4C4E9"],
+                        ["9E0Y9UT", "HP Series 5 Pro 27PM\" QHD Conferencing Monitor", "QHD (2560 x 1440) USB-C; Integrated speakers, 5MP Camera, microphone; Ambient light sensor; 3Y", "1,600", "QHD (2560x1440) Media IPS Screen Block", "Single Cable USB-C Power Hub", "5MP Built-in Pop Camera & Audio Matrix", "3 Years Structural Corporate Warranty", "monitor", "9E0Y9UT"],
+                        ["9D9S0UT", "HP Series 5 Pro 27 inch QHD Monitor", "IPS; 350 nits; Contrast 1500:1; Height Adjust/Tilt/Swivel/Pivot; 1 DP; 1 HDMI 2.0; QHD @ 100 Hz", "830", "QHD (2560 x 1440 @ 100 Hz) Pro IPS", "350 Nits High Brightness Sensor Screen", "1 DisplayPort, 1 HDMI 2.0 Input Node", "3 Years Structural Corporate Warranty", "monitor", "9D9S0UT"],
+                        ["94F48AA", "HP S5 527sa FHD Media Monitor w/Speakers", "HP S5 527sa FHD wSPKRS 94F48AA#ABT Multi-media corporate terminal node panel", "750", "FHD Multi-media Panel Layout Module", "Integrated Workspace Stereo Speakers Node", "Dual Input Terminal Port Link Interface", "3 Years Structural Corporate Warranty", "monitor", "94F48AA"],
+                        ["94C36AA", "HP S5 524sa FHD Architectural Monitor White", "HP S5 524sa FHD MNTR-W Elegant white-shell corporate workspace integration panel", "599", "FHD Architectural Styling Panel Unit", "Elegant White Form-Factor Layout Frame", "Standard Corporate Interface Ports Matrix", "3 Years Structural Corporate Warranty", "monitor", "94C36AA"]
+                    ];
+
+                    const mobileData = [
+                        ["BLACKVIEW-1", "Blackview MEGA 2 Media Pad", "6 G Memory Storage Capacity 256 GB | Screen Size 12 Inches | 2nd Generation system optimization.", "799", "2nd Gen Mobile Compute Node Slate", "256 GB High-speed Flash Storage Block", "12 Inches High Resolution Touch Layout", "Standard Corporate Protection Layer", "tablet", "BLACKVIEW-1"],
+                        ["BLACKVIEW-2", "Blackview Tab 60 Pro Logistics Slate", "Model TAB 60 PRO GARY | Storage 128 GB | Screen size 10 Inches | Max Resolution 800x1280", "650", "Mobile Workspace Logistics Slate Base", "128 GB Internal Storage Memory Node", "10 Inches Active Display Matrix Panel", "Standard Corporate Protection Layer", "tablet", "BLACKVIEW-2"],
+                        ["APPLE-PAD", "Apple iPad A16 Core Node Tablet", "Model iPad | Storage 128 GB | Screen Size 11 Inches | Resolution 2360-by-1640 at 264 ppi Pixels", "1,500", "Apple iPad Core Architecture Core", "128 GB Secure Solid State System Flash", "11 Inches Liquid Panel (2360x1640 Matrix)", "Standard Local Warranty Support Node", "tablet", "APPLE-PAD"],
+                        ["APPLE-IPHONE", "iPhone 17 Pro (256GB)", "High capacity enterprise 256 GB secure flash module array. Built-in network eSIM profile system.", "5,400", "Flagship Performance Mobile Node Unit", "256 GB Secure Solid State Memory Array", "eSIM Cellular Global Network Link Protocol", "Official Vendor Corporate Warranty Activation", "tablet", "iphone17"],
+                        ["SAMSUNG-S26", "Samsung Galaxy S26 Ultra Ultimate Node", "Android 15, One UI 7 | 12 GB RAM | Snapdragon 4.47 GHz | 256 GB Storage | 6.9 Inches 2960x1440 120Hz", "5,400", "Snapdragon Flagship Core CPU (4.47 GHz)", "12 GB Enterprise System RAM Array Node", "256 GB Flash Node | 6.9\" Dynamic 120Hz", "Official Vendor Corporate Warranty Activation", "tablet", "SAMSUNG-S25"]
+                    ];
+
+                    const accessoriesData = [
+                        ["E5E76AA", "HP X500 Wired Ergonomic Mouse", "45", "", "", "", "", "", "mouse", "E5E76AA"],
+                        ["265A9UT", "HP 125 Corporate Wired Mouse", "35", "", "", "", "", "", "mouse", "265A9UT"],
+                        ["2S9L1AA", "HP 150 Wireless Mobility Mouse", "75", "", "", "", "", "", "mouse", "2S9L1AA"],
+                        ["1Y4D0UT", "HP 235 Wireless Keyboard & Mouse Combo", "160", "", "", "", "", "", "mouse", "1Y4D0UT"],
+                        ["LN-510", "Lenovo 510 Wireless Desk Combo Set", "160", "", "", "", "", "", "mouse", "LN-510"],
+                        ["AS-CW101", "ASUS Wireless Keyboard & Mouse Set CW101", "140", "", "", "", "", "", "mouse", "AS-CW101"],
+                        ["LOGI-K270", "Logitech MK270 Secure Wireless Combo", "160", "", "", "", "", "", "mouse", "LOGI-K270"],
+                        ["WT300", "WT300 High Precision Wireless Mouse", "70", "", "", "", "", "", "mouse", "WT300"],
+                        ["WT425", "WT425 Ultra Silent Wireless Mouse", "70", "", "", "", "", "", "mouse", "WT425"],
+                        ["5JS06AA", "HP Pavilion Gaming Keyboard 800 Node", "250", "", "", "", "", "", "mouse", "5JS06AA"],
+                        ["664R5AA", "HP 150 High Reliability Wired Keyboard", "80", "", "", "", "", "", "mouse", "664R5AA"],
+                        ["240J7AA", "HP 150 Wired Combo Keyboard & Mouse Kit", "99", "", "", "", "", "", "mouse", "240J7AA"]
+                    ];
+                </script>
+
+                <script>
+                    function buildGridCards(dataArray, targetContainerId, iconType) {
+                        const container = document.getElementById(targetContainerId);
+                        if(!container) return;
+                        container.innerHTML = ""; // Clear existing grid node assets to refresh
+                        
+                        dataArray.forEach(item => {
+                            let pn = item[0];
+                            let name = item[1];
+                            let desc = item[2] || "تكوين نظام ومواصفات معتمدة لبيئة الأعمال.";
+                            let price = item[3] ? `${item[3]} شيكل` : "اتصل بالمبيعات";
+                            let t1 = item[4] || "مواصفات معيارية أصلية";
+                            let t2 = item[5] || "سرعة استجابة مريحة";
+                            let t3 = item[6] || "سعة تخزين متوافقة";
+                            let t4 = item[7] || "ضمان الوكيل المعتمد المحلي";
+                            let imgName = item[9] || "default";
+
+                            if(targetContainerId === 'grid-accessories') {
+                                price = item[2] ? `${item[2]} شيكل` : "اتصل بالمبيعات";
+                                desc = "ملحق لوحي مكتبي مصمم بشكل مريح لرفع كفاءة الاستخدام وسرعة الأداء اليومي.";
+                                t1 = "واجهة توصيل فورية وتشغيل تلقائي";
+                                t2 = "استهلاك طاقة منخفض ومثالي";
+                                t3 = "اتصال مستقر وثبات عالي بالإشارة";
+                                t4 = "حماية واستبدال من الوكيل المحلي المعتمد";
+                            }
+
+                            const card = document.createElement('div');
+                            card.className = "group glass-card p-6 grid grid-cols-1 sm:grid-cols-12 gap-5 border border-slate-200 hover:border-blue-500/40 hover:bg-white transition-all items-center shadow-sm";
+                            card.innerHTML = `
+                                <div class="sm:col-span-4 aspect-square bg-white border border-slate-200 flex flex-col items-center justify-center relative cursor-pointer overflow-hidden rounded-lg p-1">
+                                    <img src="images/${imgName}.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500 ease-out" alt="${name}">
+                                    <div class="hidden flex-col items-center justify-center w-full h-full bg-slate-100">
+                                        <i id="asset-icon" data-lucide="${iconType}" class="w-10 h-10 text-slate-400 group-hover:text-blue-600 transform group-hover:scale-125 transition-transform duration-300 ease-out"></i>
+                                        <span class="text-[10px] text-slate-400 mt-2 font-bold">صورة الجهاز</span>
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-8 space-y-2">
+                                    <div class="flex justify-between items-center flex-row-reverse">
+                                        <span class="text-[10px] font-mono font-bold text-blue-600 bg-blue-500/10 px-1.5 py-0.5 rounded">${pn || 'N/A'}</span>
+                                        <span class="text-lg font-bold text-emerald-600 font-mono tracking-tight">${price}</span>
+                                    </div>
+                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 hover:text-blue-600 cursor-pointer transition-colors">${name}</h3>
+                                    <p class="text-xs text-slate-500 font-medium line-clamp-2">${desc}</p>
+                                </div>
+                            `;
+                            
+                            const interactives = card.querySelectorAll('.cursor-pointer, h3');
+                            interactives.forEach(el => {
+                                el.onclick = () => viewSpecs(name, pn || 'AS-NODE', price, desc, t1, t2, t3, t4, iconType, imgName);
+                            });
+
+                            container.appendChild(card);
+                        });
+                    }
+
+                    function initializeAllGrids() {
+                        buildGridCards(laptopsData, 'grid-laptops', 'laptop');
+                        buildGridCards(printersData, 'grid-printers', 'printer');
+                        buildGridCards(desktopsData, 'grid-desktops', 'server');
+                        buildGridCards(monitorsData, 'grid-monitors', 'monitor');
+                        buildGridCards(mobileData, 'grid-mobile', 'tablet');
+                        buildGridCards(accessoriesData, 'grid-accessories', 'mouse');
+                        // Crucial fix: invoke asset icon mapping algorithm after loading layout nodes
+                        lucide.createIcons();
+                    }
+
+                    window.addEventListener('DOMContentLoaded', initializeAllGrids);
+                </script>
+
+            </div>
+        </section>
+
+        <section id="spec-viewer" class="page flex-col justify-center px-6 md:px-12 lg:px-24 py-16" dir="rtl">
+            <div class="max-w-6xl w-full mx-auto glass-card p-8 md:p-12 border border-blue-500/20 bg-white relative space-y-8 rounded-xl">
+                
+                <div class="absolute top-6 left-6 z-10">
+                    <button onclick="navigateTo('prod-showcase')" class="p-2 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-600 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 text-xs px-4 py-2 font-bold shadow-sm">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i> العودة للخلف
+                    </button>
+                </div>
+
+                <div class="space-y-2 pb-4 border-b border-slate-200 text-right pt-6 md:pt-0">
+                    <div class="flex items-center space-x-3 space-x-reverse justify-start">
+                        <span class="text-xs font-mono font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded" id="spec-pn">P/N: AS-NODE</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-green-500 anonymity-ping animate-ping"></span>
+                        <span class="text-xl font-bold text-emerald-600 font-mono" id="spec-price">0.00 شيكل</span>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900" id="spec-title">[ اسم الموديل ]</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <div class="lg:col-span-5 group space-y-4">
+                        <div class="w-full aspect-[4/5] bg-white border border-slate-200 rounded-lg flex flex-col items-center justify-center relative overflow-hidden p-4 shadow-sm">
+                            <img id="spec-main-img" src="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 ease-out" alt="صورة المنتج المختار">
+                            <div class="flex flex-col items-center justify-center w-full h-full bg-slate-50">
+                                <div class="p-6 bg-white rounded-full shadow-sm border border-slate-100 group-hover:scale-110 transition-transform duration-300">
+                                    <i id="spec-image-icon" data-lucide="laptop" class="w-14 h-14 text-blue-600"></i>
+                                </div>
+                                <span class="text-xs text-slate-500 font-bold mt-4">جهاز معتمد وأصلي 100%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-6 text-right">
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">نظرة عامة على المنتج</h4>
+                            <p class="text-slate-600 text-sm font-medium leading-relaxed" id="spec-desc">
+                                [ يتم تحميل تفاصيل ومواصفات الجهاز هنا تلقائياً ]
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h4 class="text-xs font-bold text-blue-600 flex items-center gap-2 justify-start">
+                                <i data-lucide="binary" class="w-4 h-4"></i> جدول المواصفات الفنية المعتمدة للأجهزة
+                            </h4>
+                            <div class="overflow-x-auto border border-slate-200 rounded-lg shadow-sm">
+                                <table class="w-full text-right border-collapse text-xs">
+                                    <thead>
+                                        <tr class="bg-slate-50 border-b border-slate-200">
+                                            <th class="p-3 font-bold text-slate-700 w-1/3">بند النظام</th>
+                                            <th class="p-3 font-bold text-slate-700">المواصفة والتعريف المعتمد</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-200 font-medium text-slate-600">
+                                        <tr>
+                                            <td class="p-3 bg-slate-50/50 font-bold text-slate-900">المعالج / بنية وحدة المعالجة</td>
+                                            <td class="p-3 text-slate-800 font-mono" id="spec-tech1">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3 bg-slate-50/50 font-bold text-slate-900">الذاكرة / قنوات تدفق الرام</td>
+                                            <td class="p-3 text-slate-800 font-mono" id="spec-tech2">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3 bg-slate-50/50 font-bold text-slate-900">سعة ونوع قرص التخزين</td>
+                                            <td class="p-3 text-slate-800 font-mono" id="spec-tech3">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3 bg-slate-50/50 font-bold text-slate-900">اتفاقية كفالة الضمان ومستوى الدعم</td>
+                                            <td class="p-3 font-bold text-blue-600" id="spec-tech4">-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-3 pt-2 justify-start">
+                            <div class="flex items-center space-x-1.5 space-x-reverse bg-slate-50 text-slate-500 px-3 py-1 rounded border border-slate-200 text-xs font-bold">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+                                <span>منتج أصلي ومضمون</span>
+                            </div>
+                            <div class="flex items-center space-x-1.5 space-x-reverse bg-slate-50 text-slate-500 px-3 py-1 rounded border border-slate-200 text-xs font-bold">
+                                <i data-lucide="clock" class="w-4 h-4 text-blue-600"></i>
+                                <span>متوفر في المخازن</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="pt-4 border-t border-slate-100 flex justify-start">
+                    <button onclick="navigateTo('prod-showcase')" class="text-xs text-slate-500 hover:text-blue-600 transition-colors flex items-center gap-1 cursor-pointer font-bold underline underline-offset-4">
+                        <i data-lucide="corner-up-left" class="w-4 h-4"></i> العودة لقائمة الأصناف الرئيسية
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page flex-col justify-center px-6 md:px-12 lg:px-24 py-16" dir="rtl">
+            <div class="max-w-4xl w-full mx-auto text-center space-y-12 relative">
+                
+                <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+                    <div class="space-y-4 text-right">
+                        <span class="text-xs font-bold text-blue-600">04 / التواصل والطلبات</span>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">تواصل معنا للاستشارات والشراء</h2>
+                    </div>
+                    <button onclick="navigateTo('toc')" class="p-2 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-600 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 text-xs px-4 py-2 font-bold shadow-sm">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i> العودة للرئيسية
+                    </button>
+                </div>
+                
+                <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto font-medium leading-relaxed">
+                    اتصل بنا مباشرة أو قم بزيارة مركزنا في رام الله للحصول على أفضل استشارات الأجهزة وتجهيز البنى التحتية والمستلزمات التقنية لشركتك أو مكتبك.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto text-right">
+                    <div class="glass-card p-6 space-y-2 bg-white/90 rounded-lg">
+                        <span class="text-xs font-bold text-blue-600 block">المقر الرئيسي</span>
+                        <p class="text-base font-bold text-slate-900">رام الله - شارع الإرسال - عمارة سردا</p>
+                        <p class="text-xs text-slate-500 font-medium">فلسطين - المبيعات المباشرة</p>
+                    </div>
+                    <div class="glass-card p-6 space-y-2 bg-white/90 rounded-lg">
+                        <span class="text-xs font-bold text-blue-600 block">البريد الإلكتروني</span>
+                        <p class="text-base font-bold text-slate-900">info@alsarisi.com</p>
+                        <p class="text-xs text-slate-500 font-medium">نرد على رسائلكم خلال 24 ساعة</p>
+                    </div>
+                    <div class="glass-card p-6 space-y-2 bg-white/90 rounded-lg">
+                        <span class="text-xs font-bold text-blue-600 block">الهاتف الأرضي المباشر</span>
+                        <p class="text-base font-bold text-slate-900">2987479</p>
+                        <p class="text-xs text-slate-500 font-medium">متاح خلال أوقات الدوام الرسمي</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="w-full py-6 px-8 glass-card border-b-0 border-x-0 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-bold text-slate-500 z-10" dir="rtl">
+            <div>
+                © 2026 <span class="text-slate-700">شركة مكتبة الساريسي</span>. جميع الحقوق محفوظة.
+            </div>
+            
+            <div class="flex items-center space-x-6 space-x-reverse">
+                <button onclick="navigateStep(-1)" class="p-1 hover:text-blue-600 transition-colors flex items-center gap-1 cursor-pointer">
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    <span>السابق</span>
+                </button>
+                <span id="page-indicator" class="font-mono text-blue-600 font-bold">1 / 6</span>
+                <button onclick="navigateStep(1)" class="p-1 hover:text-blue-600 transition-colors flex items-center gap-1 cursor-pointer">
+                    <span>التالي</span>
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Pages layout mapping system routes configuration array
+        const pagesSequence = ['cover', 'toc', 'about', 'categories', 'prod-showcase', 'spec-viewer', 'contact'];
+        let currentPageIndex = 0;
+
+        function updateCatalogState() {
+            pagesSequence.forEach(id => {
+                const element = document.getElementById(id);
+                if(element) element.classList.remove('active');
+            });
+
+            const targetId = pagesSequence[currentPageIndex];
+            const activePage = document.getElementById(targetId);
+            if(activePage) activePage.classList.add('active');
+
+            let humanIndex = currentPageIndex + 1;
+            document.getElementById('page-indicator').innerText = `${humanIndex} / ${pagesSequence.length}`;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function navigateTo(pageId) {
+            const index = pagesSequence.indexOf(pageId);
+            if (index !== -1) {
+                currentPageIndex = index;
+                updateCatalogState();
+            }
+        }
+
+        function navigateStep(direction) {
+            // FIXED DIRECTION TRANSFORM MULTIPLIER MATRIX RULE
+            currentPageIndex += (direction * -1); 
+            if (currentPageIndex < 0) currentPageIndex = pagesSequence.length - 1;
+            if (currentPageIndex >= pagesSequence.length) currentPageIndex = 0;
+            
+            if(pagesSequence[currentPageIndex] === 'spec-viewer') {
+                currentPageIndex += (direction * -1); 
+            }
+            updateCatalogState();
+        }
+
+        function activateSubCategory(catId) {
+            const grids = document.querySelectorAll('.sub-category-grid');
+            grids.forEach(g => g.classList.add('hidden'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+
+            const targetedGrid = document.getElementById(`grid-${catId}`);
+            const targetedBtn = document.getElementById(`btn-tab-${catId}`);
+            
+            if(targetedGrid) targetedGrid.classList.remove('hidden');
+            if(targetedBtn) targetedBtn.classList.add('active');
+        }
+
+        function switchCategoryTab(catId) {
+            navigateTo('prod-showcase');
+            activateSubCategory(catId);
+        }
+
+        function viewSpecs(title, pn, price, desc, t1, t2, t3, t4, iconType, imgName) {
+            document.getElementById('spec-title').innerText = title;
+            document.getElementById('spec-pn').innerText = `P/N: ${pn}`;
+            document.getElementById('spec-price').innerText = price;
+            document.getElementById('spec-desc').innerText = desc;
+            document.getElementById('spec-tech1').innerText = t1;
+            document.getElementById('spec-tech2').innerText = t2;
+            document.getElementById('spec-tech3').innerText = t3;
+            document.getElementById('spec-tech4').innerText = t4;
+
+            const specImg = document.getElementById('spec-main-img');
+            if (specImg) {
+                specImg.style.display = 'block'; 
+                specImg.src = `images/${imgName}.png?v=${new Date().getTime()}`; 
+            }
+
+            const specIcon = document.getElementById('spec-image-icon');
+            if (specIcon && iconType) {
+                specIcon.setAttribute('data-lucide', iconType);
+            }
+
+            navigateTo('spec-viewer');
+            lucide.createIcons(); 
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            updateCatalogState();
+            activateSubCategory('laptops');
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') navigateStep(-1); 
+            if (e.key === 'ArrowLeft') navigateStep(1);   
+        });
+    </script>
+</body>
+</html>

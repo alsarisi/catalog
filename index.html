@@ -571,7 +571,7 @@
                         <div class="space-y-3 pt-2">
                             <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">طلب فوري أو استفسار مبيعات</h4>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <a id="whatsapp-btn" href="https://wa.me/97022987479" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-lg text-xs transition-colors shadow-sm cursor-pointer">
+                                <a id="whatsapp-btn" href="https://wa.me/970599202239" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-lg text-xs transition-colors shadow-sm cursor-pointer">
                                     <i data-lucide="message-circle" class="w-4 h-4"></i> طلب المنتج عبر الواتساب مباشر
                                 </a>
                                 <a id="email-btn" href="mailto:info@alsarisi.com" class="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg text-xs transition-colors shadow-sm cursor-pointer">
@@ -731,7 +731,7 @@
             }
             const cleanPrice = price.replace(" شيكل", "");
             const whatsappMsg = `مرحباً شركة مكتبة الساريسي، أود الاستفسار عن منتج: ${title} (رقم الصنف: ${pn}) المعروض في الكتالوج بسعر ${cleanPrice} شيكل.`;
-            document.getElementById('whatsapp-btn').href = `https://wa.me/972599202239?text=${encodeURIComponent(whatsappMsg)}`;
+            document.getElementById('whatsapp-btn').href = `https://wa.me/970599202239?text=${encodeURIComponent(whatsappMsg)}`;
             const emailSubject = `طلب استدراج عرض سعر: ${title}`;
             const emailBody = `السادة شركة مكتبة الساريسي المحترمين،\nتحية طيبة وبعد،\n\nيرجى تزويدنا بعرض سعر رسمي للمنتج التالي:\nالاسم: ${title}\nرقم المنتج (P/N): ${pn}\nالسعر الحالي بالكتالوج: ${cleanPrice} شيكل\n\nشاكرين لكم حسن تعاونكم.`;
             document.getElementById('email-btn').href = `mailto:info@alsarisi.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
